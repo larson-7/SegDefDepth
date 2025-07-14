@@ -6,11 +6,11 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from depth_anything_v2.dinov2 import DINOv2
-from depth_anything_v2.util.blocks import FeatureFusionBlock, _make_scratch
-from depth_anything_v2.base import ConvBlock
+from dinov2 import DINOv2
+from util.blocks import FeatureFusionBlock, _make_scratch
+from base import ConvBlock
 from torchvision.transforms import Compose
-from depth_anything_v2.util.transform import Resize, NormalizeImage, PrepareForNet
+from util.transform import Resize, NormalizeImage, PrepareForNet
 
 class DPTSegmentationHead(nn.Module):
     def __init__(

@@ -1,3 +1,4 @@
+import argparse
 import os
 import json
 from collections import OrderedDict
@@ -7,12 +8,22 @@ from tqdm import tqdm
 import pycocotools.mask as mask_utils
 import matplotlib.pyplot as plt
 
-DATA_DIR = '/home/jordan/omscs/cs8903/SegDefDepth/data/ml4ded'
+def parse_args():
+    parser = argparse.ArgumentParser(description="Convert RLE masks to images with overlays.")
+    parser.add_argument('--data-dir', type=str, default=None, help='Base data directory')
+    parser.add_argument('--output-images', type=str, default=None, help='Output RGB images directory')
+    parser.add_argument('--output-masks', type=str, default=None, help='Output masks directory')
+    parser.add_argument('--output-masks-color', type=str, default=None, help='Output colored masks/overlays directory')
+    return parser.parse_args()
+
+args = parse_args()
+
+DATA_DIR = args.data_dir
 MASKS_DIR = os.path.join(DATA_DIR, 'layer_masks')
 VIDEOS_DIR = os.path.join(DATA_DIR, 'layer_videos')
-OUTPUT_IMAGES = os.path.join(DATA_DIR, 'segmentation_images')
-OUTPUT_MASKS = os.path.join(DATA_DIR, 'segmentation_masks')
-OUTPUT_MASKS_COLOR = os.path.join(DATA_DIR, 'segmentation_masks_color')
+OUTPUT_IMAGES = args.output_images or os.path.join(DATA_DIR, 'segmentation_images')
+OUTPUT_MASKS = args.output_masks or os.path.join(DATA_DIR, 'segmentation_masks')
+OUTPUT_MASKS_COLOR = args.output_masks_color or os.path.join(DATA_DIR, 'segmentation_masks_color')
 
 os.makedirs(OUTPUT_IMAGES, exist_ok=True)
 os.makedirs(OUTPUT_MASKS, exist_ok=True)

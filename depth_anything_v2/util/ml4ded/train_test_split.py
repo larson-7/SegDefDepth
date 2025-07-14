@@ -2,7 +2,7 @@ import os
 import shutil
 import random
 
-ROOT = '/home/jordan/omscs/cs8903/SegDefDepth/data/ml4ded'
+ROOT = '/Users/sheanscottjr/omscs/cs8903/SegDefDepth/training_data'
 IMG_DIR = os.path.join(ROOT, 'segmentation_images')
 MASK_DIR = os.path.join(ROOT, 'segmentation_masks')
 SPLIT_DIR = os.path.join(ROOT, 'official_splits')

@@ -4,7 +4,7 @@ import random
 from video_cropping import detect_crop_params, crop_video_ffmpeg
 from pathlib import Path
 
-data_dir = "data"
+data_dir = "training_data/layer_videos"
 data_dir = os.path.join(os.getcwd(), data_dir)
 assert os.path.exists(data_dir), "data directory does not exist, create data directory in this repository and add videos"
 

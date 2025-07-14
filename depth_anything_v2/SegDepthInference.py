@@ -14,8 +14,8 @@ from time import time
 
 import open3d as o3d
 
-from depth_anything_v2.depth_metrics import comprehensive_depth_evaluation
-from depth_anything_v2.seg_deformable_depth import SegmentationDeformableDepth
+from depth_metrics import comprehensive_depth_evaluation
+from seg_deformable_depth import SegmentationDeformableDepth
 from util.vis import decode_segmap
 
 class SegLabels(Enum):

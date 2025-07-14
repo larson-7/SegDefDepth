@@ -15,7 +15,7 @@ from torch.utils.tensorboard import SummaryWriter
 import torchvision
 from torchvision import transforms
 
-from depth_anything_v2.SegDepthInference import SegLabels
+from SegDepthInference import SegLabels
 
 cur_path = os.path.abspath(os.path.dirname(__file__))
 root_path = os.path.split(cur_path)[0]
@@ -34,7 +34,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Semantic Segmentation Training With Pytorch')
     parser.add_argument('--dataset', type=str, default="ml4ded", choices=["nyu", "ml4ded"],
                         help='Dataset to train on (nyu or ml4ded)')
-    parser.add_argument('--data-dir', type=str, default="../data/ml4ded",
+    parser.add_argument('--data-dir', type=str, default="../training_data/",
                         help='train/test data directory')
     parser.add_argument('--model-weights-dir', type=str, default="../model_weights",
                         help='pretrained model weights directory')

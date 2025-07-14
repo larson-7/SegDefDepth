@@ -4,13 +4,13 @@ import torch.nn as nn
 import torch.nn.functional as F
 import cv2
 
-from depth_anything_v2.dino2seg import DPTSegmentationHead
-from depth_anything_v2.dpt import DPTHead
+from dino2seg import DPTSegmentationHead
+from dpt import DPTHead
 from torchvision.transforms import Compose
 
-from .dinov2 import DINOv2
-from .util.transform import Resize, NormalizeImage, PrepareForNet
-from .util.blocks import FeatureFusionBlock, _make_scratch
+from dinov2 import DINOv2
+from util.transform import Resize, NormalizeImage, PrepareForNet
+from util.blocks import FeatureFusionBlock, _make_scratch
 
 class SegmentationDeformableDepth(nn.Module):
     def __init__(

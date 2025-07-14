@@ -5,3 +5,6 @@ opencv-python
 torch
 torchvision
 albumentations
+pycoocotools
+tensorboard
+open3d

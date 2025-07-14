@@ -4,9 +4,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torchvision.transforms import Compose
 
-from .dinov2 import DINOv2
-from .util.transform import Resize, NormalizeImage, PrepareForNet
-from .util.blocks import FeatureFusionBlock, _make_scratch
+from dinov2 import DINOv2
+from util.transform import Resize, NormalizeImage, PrepareForNet
+from util.blocks import FeatureFusionBlock, _make_scratch
 
 
 def _make_fusion_block(features, use_bn, size=None):
